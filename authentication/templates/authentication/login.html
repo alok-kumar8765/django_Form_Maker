@@ -1,0 +1,24 @@
+{% extends "authentication/base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="username" placeholder="Username" class="form-control">
+        </div>
+        <br>
+        <div>
+            <input type="password" name="password" placeholder="Password" class="form-control">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <p>Or <a href="/auth/register/">register an account</a>, or did you <a href="/auth/forgot-password/">forgot password</a>?</p>
+{% endblock %}
